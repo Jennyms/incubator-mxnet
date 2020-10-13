@@ -19,7 +19,6 @@ import csv
 import os
 import sys
 
-import flaky
 import numpy as np
 import mxnet as mx
 mx.test_utils.set_default_context(mx.gpu(0))
