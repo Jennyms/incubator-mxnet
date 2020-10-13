@@ -30,7 +30,7 @@ sys.path.insert(0, os.path.join(curr_path, '../unittest'))
 # They will be detected by test framework, as long as the current file has a different filename
 from test_profiler import *
 
-@flaky(max_runs=3)  # https://github.com/apache/incubator-mxnet/issues/18564
+@pytest.mark.skip(reason='https://github.com/apache/incubator-mxnet/issues/18564')
 def test_gpu_memory_profiler_symbolic():
     enable_profiler('test_profiler.json')
     profiler.set_state('run')
@@ -110,7 +110,7 @@ def test_gpu_memory_profiler_symbolic():
                 assert False, "Unknown allocation entry has been encountered"
 
 
-@flaky(max_runs=3)  # https://github.com/apache/incubator-mxnet/issues/18564
+@pytest.mark.skip(reason='https://github.com/apache/incubator-mxnet/issues/18564')
 def test_gpu_memory_profiler_gluon():
     enable_profiler(profile_filename='test_profiler.json')
     profiler.set_state('run')
